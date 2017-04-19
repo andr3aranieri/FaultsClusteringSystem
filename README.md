@@ -19,8 +19,10 @@ In this project i implemented 2 **StreamReader** modules:
 - **MailReader**: it periodically downloads mail from a configured imap account. This can be used to intercept mails sent by customers to notify problems.
 
 These 2 modules will send received data to the **TextProcessing** module (remove punctuation, remove stopwords, lemming,...) which will save formatted docs in datastore: each doc will have the following structure:
-** * *doc_i\t tfidf_i1 tfidf_i2 tfidf_i3 tfidf_i3 ….  tfidf_iN* * ** 
-* *tfidf_ij, 1 <= i <= M, 1 <= j <= N* * (N: num terms in the document collection; M: num docs in document collection)
+
+`doc_i\t tfidf_i1 tfidf_i2 tfidf_i3 tfidf_i3 ….  tfidf_iN`
+
+`tfidf_ij, 1 <= i <= M, 1 <= j <= N` (N: num terms in the document collection; M: num docs in document collection)
 
 I’ll represent each doc with a vector in the N-Dimensional tfidf euclidean space.
 Documents distance will be chosen after some test; it is configurable (clustering modules could choose a distance measure in function of the clustering they need).
@@ -109,7 +111,8 @@ The command to close a stream:
 
 closes the stream with id 23.
 
-### Streamer Module Structure
+**Streamer Module Structure**
+
 ```
 ./Module
 ./Module/__init__.py
